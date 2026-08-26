@@ -17,7 +17,7 @@ pipeline{
             steps{
             sh "docker push husainrehan/selenium:latest"
             sh "docker tag husainrehan/selenium:latest husainrehan/selenium:${env.BUILD_NUMBER}"
-            sh "docker push husainrehan/selenium:latest husainrehan/selenium:${env.BUILD_NUMBER}"
+            sh "docker push husainrehan/selenium:${env.BUILD_NUMBER}"
         }}
 
     }
