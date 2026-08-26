@@ -15,7 +15,9 @@ pipeline{
 
         stage('push-image-to-dockerhub'){
             steps{
-            sh "docker push husainrehan/selenium"
+            sh "docker push husainrehan/selenium:latest"
+            sh "docker tag husainrehan/selenium:latest husainrehan/selenium:${env.BUILD_NUMBER}"
+            sh "docker push husainrehan/selenium:latest husainrehan/selenium:${env.BUILD_NUMBER}"
         }}
 
     }
